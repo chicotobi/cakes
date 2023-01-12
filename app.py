@@ -10,11 +10,11 @@ def cyclic_perm(a):
 
 cols = ['r','y','g','b','c','m']
 
-ncols = 3
-npieces = 5
+ncols = 5
+npieces = 4
 
-ncols = streamlit.slider('Number of colors:',2,6,3)
-npieces = streamlit.slider('Number of pieces:',2,6,3)
+ncols = streamlit.slider('Number of colors:',2,6,4)
+npieces = streamlit.slider('Number of pieces:',2,6,4)
 
 combs = itertools.product(range(ncols),repeat=npieces)
 
@@ -60,19 +60,19 @@ for i in itertools.product(range(ncols),repeat=npieces):
 
   idx += 1
 
-  if idx0 < 1e10:
-    x0 = (idx0% ncolumns) * wc
-    y0 = (idx0//ncolumns) * wc
-    ax.plot([x,x0],[y,y0],'k-')
-    for txt in ax.texts:
-      if txt.get_position() == (x0-r0/2,y0+r0/2):
-        txt.remove()
-    ax.text(x0-r0/2, y0+r0/2, ct[idx0], fontsize=15)
+  # if idx0 < 1e10:
+  #   x0 = (idx0% ncolumns) * wc
+  #   y0 = (idx0//ncolumns) * wc
+  #   ax.plot([x,x0],[y,y0],'k-')
+  #   for txt in ax.texts:
+  #     if txt.get_position() == (x0-r0/2,y0+r0/2):
+  #       txt.remove()
+  #   ax.text(x0-r0/2, y0+r0/2, ct[idx0], fontsize=15)
 
-  plt.savefig('foo'+str(idx)+'.png')
+  # plt.savefig('foo'+str(idx)+'.png')
 
-  for line in ax.get_lines():
-    line.remove()
+  # for line in ax.get_lines():
+  #   line.remove()
 fig
 
 # import imageio
