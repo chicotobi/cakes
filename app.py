@@ -13,8 +13,8 @@ cols = ['r','y','g','b','c','m']
 ncols = 5
 npieces = 4
 
-ncols = streamlit.slider('Number of colors:',2,6,4)
-npieces = streamlit.slider('Number of pieces:',2,6,4)
+ncols = streamlit.number_input("Number of colors:",2,6,4)
+npieces = streamlit.number_input('Number of pieces:',2,6,4)
 
 combs = itertools.product(range(ncols),repeat=npieces)
 
