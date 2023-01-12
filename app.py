@@ -74,6 +74,7 @@ for i in itertools.product(range(ncols),repeat=npieces):
   # for line in ax.get_lines():
   #   line.remove()
 fig
+streamlit.write("Number of different pieces:",len(ct))
 
 # import imageio
 # images = []
