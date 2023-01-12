@@ -60,14 +60,14 @@ for i in itertools.product(range(ncols),repeat=npieces):
 
   idx += 1
 
-  # if idx0 < 1e10:
-  #   x0 = (idx0% ncolumns) * wc
-  #   y0 = (idx0//ncolumns) * wc
-  #   ax.plot([x,x0],[y,y0],'k-')
-  #   for txt in ax.texts:
-  #     if txt.get_position() == (x0-r0/2,y0+r0/2):
-  #       txt.remove()
-  #   ax.text(x0-r0/2, y0+r0/2, ct[idx0], fontsize=15)
+  if idx0 < 1e10:
+    x0 = (idx0% ncolumns) * wc
+    y0 = (idx0//ncolumns) * wc
+    #ax.plot([x,x0],[y,y0],'k-')
+    for txt in ax.texts:
+      if txt.get_position() == (x0-r0/2,y0+r0/2):
+        txt.remove()
+    ax.text(x0-r0/2, y0+r0/2, ct[idx0], fontsize=15)
 
   # plt.savefig('foo'+str(idx)+'.png')
 
